@@ -1,5 +1,9 @@
 class RecipesController < ActionController::Base
 
+  def index
+    @recipes = Recipe.all
+  end
+
   def new
     @recipe = Recipe.new
     3.times { @recipe.ingredients.build }
