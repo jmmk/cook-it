@@ -1,10 +1,17 @@
 Cookit::Application.routes.draw do
+  root 'recipes#index'
+
+  devise_for :users
+
+  resources :recipes
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'recipes#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -13,7 +20,7 @@ Cookit::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-    resources :recipes
+
 
   # Example resource route with options:
   #   resources :products do

@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Cookit" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -22,7 +22,61 @@
 
   <body>
 
-    <%= notice %>
+  <nav class="top-bar">
+    <%= yield :extra_nav %>
+    <ul class="title-area hide-for-small">
+      <li class="name">
+        <!-- <%= image_tag('logo.png', class: 'logo') %> -->
+        <h1 class="light-on-dark"><%= link_to 'Cookit', recipes_path %></h1>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+
+      <ul class="right hide-for-medium-down">
+        <li class="divider"></li>
+        <li><%= link_to 'Home', recipes_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to 'About' %></li>
+        <li class="divider"></li>
+        <li><%= link_to 'FAQ' %></li>
+        <li class="divider"></li>
+        <%- if !user_signed_in? %>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <%- else -%>
+          <li><%= link_to "Logged in as #{current_user.email}", '#' %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <%- end -%>
+        <li class="divider"></li>
+      </ul>
+
+      <ul class="right show-for-medium-down">
+        <li class="has-dropdown"><a href="#" class="">Menu</a>
+          <ul class="dropdown">
+            <li><%= link_to 'Home', recipes_path %></li>
+            <li><%= link_to 'About' %></li>
+            <li><%= link_to 'FAQ' %></li>
+            <%- if !user_signed_in? %>
+              <li><%= link_to 'asd', new_user_session_path %></li>
+            <%- else -%>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <%- end -%>
+          </ul>
+        </li>
+      </ul>
+
+    </section>
+  </nav>
+
+  <div class="row show-for-small">
+    <!-- <%= image_tag('logo.png') %> -->
+  </div>
+
+    <h3 class="notice"><%= notice %></h3>
+    <h3 class="alert"><%= alert %></h3>
     <%= yield %>
 
 

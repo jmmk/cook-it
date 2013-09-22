@@ -23,5 +23,6 @@ feature 'user views all recipes', %Q{
     expect(page).to have_content('Super Chicken')
     expect(page).to have_content('Super Pork')
     expect(page).to have_content('2 Onions')
+    expect(page).to_not have_content('5 Jelly')
   end
 end
