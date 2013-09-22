@@ -1,0 +1,24 @@
+// h1, h2, h3 {
+//   text-shadow: 1px 1px 1px white;
+// }
+
+.top-bar .name h1 {
+  color:white;
+  padding-left: 15px;
+}
+
+.notice,
+.alert {
+  text-align: center;
+}
+
+// .logo {
+//   padding-left: 3em;
+// }
+
+.dark-on-light {
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.15), 0 1px 0 rgba(255,255,255,0.8);
+}
+.light-on-dark {
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.4);
+}

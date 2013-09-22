@@ -19,6 +19,7 @@ feature 'user creates a recipe', %Q{
     fill_in 'recipe_ingredients_attributes_2_name', with: '3 Peppers'
     click_on 'Create Recipe'
 
+    expect(page).to have_content('Recipe Saved')
     expect(page).to have_content('Super Chicken')
     expect(page).to have_content('1 Chicken')
     expect(page).to have_content('2 Onions')

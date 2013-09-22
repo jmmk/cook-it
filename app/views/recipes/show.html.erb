@@ -1,8 +1,17 @@
-<h1><%= @recipe.title %></h1>
+<div class="row">
+  <div class="large-10 large-offset-1 columns">
+    <h1><%= @recipe.title %></h1>
 
-<%- @recipe.ingredients.each do |ingredient| -%>
-  <p><%= ingredient.name %></p>
-<%- end -%>
+    <%- @recipe.ingredients.each do |ingredient| -%>
+      <p><%= ingredient.name %></p>
+    <%- end -%>
 
-<p><%= link_to 'Edit Recipe', edit_recipe_path %></p>
-<p><%= link_to 'Delete Recipe', @recipe, method: :delete %></p>
+    <p>
+      <%= link_to 'Edit Recipe', edit_recipe_path %>
+        |
+      <%= link_to 'Delete Recipe', @recipe, method: :delete %>
+        |
+      <%= link_to 'Back to Recipes', recipes_path %>
+    </p>
+  </div>
+</div>

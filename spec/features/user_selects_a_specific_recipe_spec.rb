@@ -56,6 +56,6 @@ So that I can do something with it
     visit recipe_path(recipe)
     click_on 'Delete Recipe'
     expect(page).to_not have_content('Super Chicken')
-    expect(page).to have_content('Recipe Deleted Successfully')
+    expect(page).to have_content('Recipe Deleted')
   end
 end
