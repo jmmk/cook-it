@@ -42,4 +42,20 @@ So that I can do something with it
     expect(page).to have_content('BAM Chicken')
     expect(page).to have_content('1 AWESOME Chicken')
   end
+
+  # As a user
+  # I want to delete a recipe
+  # So that it doesn't show up in my collection
+
+  # Acceptance Criteria:
+  #   -Ask for confirmation
+  #   -Can only delete my recipes
+
+  scenario 'user deletes recipe' do
+    recipe = FactoryGirl.create(:recipe)
+    visit recipe_path(recipe)
+    click_on 'Delete Recipe'
+    expect(page).to_not have_content('Super Chicken')
+    expect(page).to have_content('Recipe Deleted Successfully')
+  end
 end

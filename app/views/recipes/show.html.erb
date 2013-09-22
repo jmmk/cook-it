@@ -4,4 +4,5 @@
   <p><%= ingredient.name %></p>
 <%- end -%>
 
-<%= link_to 'Edit Recipe', edit_recipe_path %>
+<p><%= link_to 'Edit Recipe', edit_recipe_path %></p>
+<p><%= link_to 'Delete Recipe', @recipe, method: :delete %></p>

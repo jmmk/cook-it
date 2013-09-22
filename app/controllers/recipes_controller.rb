@@ -1,5 +1,5 @@
-class RecipesController < ActionController::Base
-  before_action :set_recipe, only: [:show, :edit, :update]
+class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
     @recipes = Recipe.all
@@ -14,7 +14,7 @@ class RecipesController < ActionController::Base
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      redirect_to @recipe
+      redirect_to @recipe, notice: 'casd'
     else
       render new_recipe_path
     end
@@ -32,6 +32,11 @@ class RecipesController < ActionController::Base
     else
       render edit_recipe_path
     end
+  end
+
+  def destroy
+    @recipe.destroy
+    redirect_to recipes_path, notice: 'Recipe Deleted Successfully'
   end
 
   private

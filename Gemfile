@@ -52,7 +52,8 @@ group :test, :development do
   gem 'valid_attribute'
   gem 'pry-rails'
   gem 'simple_form', github: 'plataformatec/simple_form'
-  gem 'zurb-foundation'
 end
+
+gem 'zurb-foundation'
 
 
