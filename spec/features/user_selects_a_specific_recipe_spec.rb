@@ -22,4 +22,24 @@ So that I can do something with it
     expect(page).to have_content('2 Onions')
     expect(page).to have_content('3 Peppers')
   end
+
+  # As a user
+  # I want to edit recipes
+  # So that I can change or improve them
+
+  # Acceptance Criteria:
+  #   -I can only change my own recipes
+  #   -Cannot make recipe invalid
+
+  scenario 'user edits a specific recipe' do
+    recipe = FactoryGirl.create(:recipe)
+    visit recipe_path(recipe)
+    click_on 'Edit Recipe'
+    expect(page).to have_content('Edit Recipe')
+    fill_in 'Title', with: 'BAM Chicken'
+    fill_in 'recipe_ingredients_attributes_0_name', with: '1 AWESOME Chicken'
+    click_on 'Save Recipe'
+    expect(page).to have_content('BAM Chicken')
+    expect(page).to have_content('1 AWESOME Chicken')
+  end
 end

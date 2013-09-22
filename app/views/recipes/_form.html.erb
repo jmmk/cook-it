@@ -4,5 +4,9 @@
   <%= r.simple_fields_for :ingredients do |i| %>
     <%= i.input :name %>
   <%- end -%>
-  <%= r.submit 'Create Recipe' %>
+  <%- if current_page?(new_recipe_path) -%>
+    <%= r.submit 'Create Recipe' %>
+  <%- else -%>
+    <%= r.submit 'Save Recipe' %>
+  <%- end -%>
 <%- end -%>
