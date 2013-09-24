@@ -1,10 +1,12 @@
 <div class="row">
-  <div class="large-10 large-offset-1 columns">
+  <div class="large-6 large-offset-1 columns">
     <h1><%= @recipe.title %></h1>
 
     <%- @recipe.ingredients.each do |ingredient| -%>
       <p><%= ingredient.name %></p>
     <%- end -%>
+
+    <p><%= @recipe.directions %></p>
 
     <p>
       <%= link_to 'Edit Recipe', edit_recipe_path %>

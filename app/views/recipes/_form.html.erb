@@ -6,10 +6,11 @@
       <%= r.simple_fields_for :ingredients do |i| %>
         <%= i.input :name %>
       <%- end -%>
+      <%= r.input :directions, class: "directions" %>
       <%- if current_page?(new_recipe_path) -%>
-        <%= r.submit 'Create Recipe' %>
+        <%= r.button :submit, 'Create Recipe' %>
       <%- else -%>
-        <%= r.submit 'Save Recipe' %>
+        <%= r.button :submit, 'Save Recipe' %>
       <%- end -%>
     <%- end -%>
   </div>

@@ -878,9 +878,9 @@ $anchor-font-color-hover: lighten($primary-color, 5%);
 
 // We use these to control the background and border styles
 
-// $panel-bg: darken(#fff, 5%);
+$panel-bg: darken(#eee, 5%);
 // $panel-border-style: solid;
-// $panel-border-size: 1px;
+$panel-border-size: 2px;
 
 // We use this % to control how much we darken things on hover
 
@@ -1254,7 +1254,7 @@ $topbar-title-font-size: emCalc(40);
 
 $topbar-dropdown-bg: #002A4A;
 // $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: lighten($topbar-bg, 5%);
+$topbar-dropdown-link-bg: lighten($topbar-bg, 0%);
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.5;
