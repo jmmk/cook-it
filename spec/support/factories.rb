@@ -8,4 +8,10 @@ FactoryGirl.define  do
       recipe.ingredients.build(name: '5 Jelly')
     end
   end
+
+  factory :user do
+    email 'asd@asd.com'
+    password 'password'
+    password_confirmation 'password'
+  end
 end

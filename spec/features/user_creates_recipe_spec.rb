@@ -11,6 +11,8 @@ feature 'user creates a recipe', %Q{
 #   -Must have at least one ingredient
 
   scenario 'user enters valid information' do
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
     visit new_recipe_path
     expect(page).to have_content('Create New Recipe')
     fill_in 'Title', with: 'Super Chicken'

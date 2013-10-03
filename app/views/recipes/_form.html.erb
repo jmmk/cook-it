@@ -8,9 +8,9 @@
       <%- end -%>
       <%= r.input :directions, class: "directions" %>
       <%- if current_page?(new_recipe_path) -%>
-        <%= r.button :submit, 'Create Recipe' %>
+        <%= r.submit 'Create Recipe' %>
       <%- else -%>
-        <%= r.button :submit, 'Save Recipe' %>
+        <%= r.submit 'Save Recipe' %>
       <%- end -%>
     <%- end -%>
   </div>

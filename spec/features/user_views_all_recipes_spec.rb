@@ -17,7 +17,8 @@ feature 'user views all recipes', %Q{
     FactoryGirl.create(:recipe, title: 'Super Beef')
     FactoryGirl.create(:recipe, title: 'Super Pork')
     FactoryGirl.create(:recipe)
-
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
     visit recipes_path
     expect(page).to have_content('Super Beef')
     expect(page).to have_content('Super Chicken')

@@ -12,9 +12,13 @@ So that I can do something with it
 #   -Can perform actions with recipe
 #   -Can see an edit option
 
+before do
+  user = FactoryGirl.create(:user)
+  sign_in_as(user)
+end
+
   scenario 'user visits index and selects a recipe' do
     FactoryGirl.create(:recipe)
-
     visit recipes_path
     click_on 'Super Chicken'
     expect(page).to have_content('Super Chicken')
