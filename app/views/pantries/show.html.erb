@@ -1,9 +1,9 @@
 <div class="row">
   <div class="large-6 columns">
     <h1>Welcome to the Pantry Party</h1>
-<!--     <% @pantry_ingredients.each do |pi| %>
+    <% @pantry_ingredients.each do |pi| %>
       <%= pi.ingredient.name %>
-    <% end %> -->
+    <% end %>
 
     <%= simple_form_for @pantry do |p| %>
       <%= p.simple_fields_for :ingredients do |i| %>

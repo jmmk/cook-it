@@ -11,17 +11,17 @@ So that I can keep track of items I already have available
 # -I can see a list of all previously stored items
 
   scenario 'User saves ingredients' do
-    user = FactoryGirl.create(:user)
-    sign_in_as(user)
+    user = FactoryGirl.build(:user)
+    sign_up_as(user)
     visit pantry_path
     previous_count = PantryIngredient.count
 
-    fill_in 'New Ingredient', with: 'Eggs'
+    fill_in 'pantry_ingredients_attributes_0_name', with: 'Eggs'
     click_on 'Add Ingredient'
-    fill_in 'New Ingredient', with: 'Chicken'
+    fill_in 'pantry_ingredients_attributes_1_name', with: 'Chicken'
     click_on 'Add Ingredient'
     expect(page).to have_content('Chicken')
     expect(page).to have_content('Eggs')
-    expect(PantryInredient.count).to eql(previous_count + 2)
+    expect(PantryIngredient.count).to eql(previous_count + 2)
   end
 end
