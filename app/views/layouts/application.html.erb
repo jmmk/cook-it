@@ -41,15 +41,15 @@
         <li class="divider"></li>
         <li><%= link_to 'FAQ' %></li>
         <li class="divider"></li>
-        <%- if !user_signed_in? %>
+        <% if !user_signed_in? %>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li class="divider"></li>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- else -%>
+        <% else %>
           <li><%= link_to "Logged in as #{current_user.email}", '#' %></li>
           <li class="divider"></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- end -%>
+        <% end %>
         <li class="divider"></li>
       </ul>
 
@@ -59,12 +59,12 @@
             <li><%= link_to 'Home', recipes_path %></li>
             <li><%= link_to 'About' %></li>
             <li><%= link_to 'FAQ' %></li>
-            <%- if !user_signed_in? %>
+            <% if !user_signed_in? %>
               <li><%= link_to 'Sign Up', new_user_registration_path %></li>
               <li><%= link_to 'Sign In', new_user_session_path %></li>
-            <%- else -%>
+            <% else %>
               <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            <%- end -%>
+            <% end %>
           </ul>
         </li>
       </ul>

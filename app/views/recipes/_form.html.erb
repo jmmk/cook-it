@@ -5,13 +5,13 @@
       <h2>Ingredients:</h2>
       <%= r.simple_fields_for :ingredients do |i| %>
         <%= i.input :name %>
-      <%- end -%>
+      <% end %>
       <%= r.input :directions, class: "directions" %>
-      <%- if current_page?(new_recipe_path) -%>
+      <% if current_page?(new_recipe_path) %>
         <%= r.submit 'Create Recipe' %>
-      <%- else -%>
+      <% else %>
         <%= r.submit 'Save Recipe' %>
-      <%- end -%>
-    <%- end -%>
+      <% end %>
+    <% end %>
   </div>
 </div>

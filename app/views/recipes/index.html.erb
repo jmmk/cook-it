@@ -21,13 +21,13 @@
         <div class="large-6 columns">
           <div class="panel radius">
             <h1 class="dark-on-light">Recent Recipes:</h1>
-            <%- @recipes[0..2].each do |recipe| -%>
+            <% @recipes.each do |recipe| %>
               <h2><%= link_to recipe.title, recipe if recipe.present? %></h2>
-              <%- recipe.ingredients[0..2].each_with_index do |ingredient, index| -%>
+              <% recipe.ingredients.limit(3).each do |ingredient| %>
                 <p><%= ingredient.name %></p>
-                <p><%= link_to '...', recipe if index == 2 %></p>
-              <%- end -%>
-            <%- end -%>
+              <% end %>
+              <p><%= link_to '...', recipe %></p>
+            <% end %>
           </div>
         </div>
 
