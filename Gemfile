@@ -40,7 +40,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+group :production do
+  gem 'rails_12factor'
+end
 
 group :test, :development do
   gem 'capybara'
@@ -51,9 +53,9 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'valid_attribute'
   gem 'pry-rails'
-  gem 'simple_form', github: 'plataformatec/simple_form'
 end
 
+gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'zurb-foundation'
 gem 'devise'
 
