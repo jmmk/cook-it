@@ -1,13 +1,13 @@
-# Ember Cook-it
+# Cook-it
 
 Recipe Storage and Search application written in 
 [Ruby on Rails](http://rubyonrails.org/).
 
-Try it out the prototype at http://cook-it.herokuapp.com
+Try out the prototype at http://cook-it.herokuapp.com
 
 ![screenshot](http://i.imgur.com/GJnZ5sT.png)
 
-The next iteration of this project built in Ember.js with a Rails API can be found at:
+The next iteration of this project built in Ember.js with a Rails API backend can be found at:
 https://github.com/jmmk/ember-cook-it
 
 ## Building
